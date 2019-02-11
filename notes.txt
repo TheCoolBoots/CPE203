@@ -1,0 +1,129 @@
+Dr. Hisham Assal
+office 12-240
+hours MW 10-11AM
+
+Static Method: methods that can be used without instantiating an object
+
+CRC card
+	describes a class, its responsibilities, and its collaborating classes
+	use index card
+	verbs to describe methods
+
+relationships between classes
+	dependency
+		class being used by another class
+		arrow from class using the class to the dependent class
+		dashed arrow from class using the class to dependent class
+
+types of Dependencies
+	aggregation
+		a class is made up of one or more instances of another class
+		eg. a car is made up of an engine, 4 wheels, etc.
+		solid line with diamond on aggregate object
+	association
+		a class references another class
+	composition
+		one of the classes cannot exist without the other
+		would not run without instances of other class
+	inheritance
+		define a class as a subclass of another class
+		solid arrow from child to parent
+
+Multiplicities: Multiple aggregates in single class -- 
+	* = Any Number
+	1..* = One or More
+	0..1 = Zero or One
+	1 = exactly one
+
+encapsulation: objects of classes do not have direct access to the variables of another class
+	AKA information hiding
+	hiding implementation data
+	allows use of a class without knowing its implementation
+
+class = blueprint
+instance = instantiation of class
+object = general term for either
+
+instance variable = variables within a class
+
+Javadocs--
+	comments should all be /**
+	@param [name, short explanation]
+	@return [describe return value]
+	
+	ex:
+	/** Withdraws from bank account
+	    @param amount to withdraw
+	*/
+	
+
+instance methods = methods that require an instantiation of a class to use
+
+Interfaces:
+    define interface in class definition
+    define all methods that should be in implementation
+    
+Generic programming
+    ArrayList<String>
+    in constructor use whatever is in <> inside class
+    act as placeholders
+    usually use one letter names for Generic Variables
+    
+    class definition:
+    public class Pair<T,S>{
+        public Pair(T firstElement, S secondElement){
+        
+        }
+    }
+    
+reading and writing to text files
+
+    File(String filepath)
+    Scanner.next/nextInt/nextDouble
+    Scanner.hasNext
+    Scanner.useDelimiter **look this up x`
+    
+    PrintWriter(String filepath)
+    out.println/printf
+    use "UTF-8" as second parameter for Scanner and PrintWriter
+
+    Functional Programming
+    Java Stream
+        changes array/arraylist to be able to use functional programming
+        
+        //prints out all values in the list
+        IntStream.of([array]).forEach(value -> System.out.printf("%d ", value);
+
+        //prints out sum of all numbers
+        System.out.println(IntStream.of([array]).reduce(0, (x, y) -> x+y))
+
+        Intstream.of([array]).filter() //look this up
+        intStream.of([array]).sorted 
+        IntStream.of([array]).map
+        distinct
+        limit
+        forEach(lamda expression)
+        average
+        count
+        max
+        min
+        reduce(init val, (x,y)->x+y) where x is the initial value
+        collect
+        toArray
+        findFirst
+        findAny
+        anyMatch
+        allMatch
+        
+    functional interfaces:
+        Function<T, R > calls a function on type T returns type R
+            Function<int, int> myFunction = (int x, int y)->{return x+y;}
+                                                ^anonymous function
+            myFunction.apply
+        Predicate<T> returns true or false
+        BinaryOperator<T> calls a function on type T returns type T
+        Consumer<T> does something to an object in a collection
+        Supplier<T> create a collection in which a stream's operations are placed
+        
+    Lambda expressions:
+        (x,y) -> x+y

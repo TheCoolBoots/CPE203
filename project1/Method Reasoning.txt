@@ -1,0 +1,4 @@
+The way in which I organized the methods in this project are as follows:
+1. resulting Dependencies must be unidirectional (ex. only parent to child no child to parent)
+2. Methods must be in the lowest class possible to achieve unidirectional Dependencies
+3. VirtualWorld is the top-most class, aggregating instances of the largest classes, and no other class should depend on it

@@ -1,0 +1,160 @@
++scheduleEvent()	<<static>>
+-unscheduleAllEvents()	<<static>>
+-removePendingEvent()	<<static>>
++updateOnTime()	<<static>>
++scheduleActions()	<<static>>
+-executeAction()	<<static>>
+-executeAnimationAction()	<<static>>
+-nextImage()	<<static>>
+-executeActivityAction()	<<static>>
+-executeMinerFullActivity()	<<static>>
+-executeMinerNotFullActivity()	<<static>>
+-executeOreActivity()	<<static>>
+-executeOreBlobActivity()	<<static>>
+-findNearest()	<<static>>
+-nearestEntity()	<<static>>
+-distanceSquared()	<<static>>
+-executeQuakeActivity()	<<static>>
+-executeVeinActivity()	<<static>>
+-transformNotFull()	<<static>>
+-transformFull()	<<static>>
+-moveToNotFull()	<<static>>
+-moveToFull()	<<static>>
+-moveToOreBlob()	<<static>>
+-nextPositionMiner(): Point	<<static>>
+-nextPositionOreBlob(): Point	<<static>>
+-adjacent(): boolean	<<static>>
+-findOpenAround(): Optional<Point>	<<static>>
+
++getCurrentImage(): PImage            <<static>>
++getAnimationPeriod(): int                   <<static>>
++nextImage()                                 <<static>>
++executeAction()                             <<static>>
++executeAnimationAction()                    <<static>>
++executeActivityAction()                     <<static>>
++executeMinerFullActivity()                  <<static>>
++executeMinerNotFullActivity()             <<static>>
++executeOreActivity()                           <<static>>
++executeOreBlobActivity()                     <<static>>
++executeQuakeActivity()                       <<static>>
++executeVeinActivity()                          <<static>>
++scheduleActions()                           <<static>>
++transformNotFull(): boolean                 <<static>>
++transformFull()                             <<static>>
++moveToNotFull(): boolean                    <<static>>
++moveToFull(): boolean                       <<static>>
++moveToOreBlob(): boolean                    <<static>>
++nextPositionMiner(): Point                  <<static>>
++nextPositionOreBlob(): Point                <<static>>
++adjacent(): boolean                            <<static>>
++findOpenAround(): Optional<Point>  <<static>>
++scheduleEvent()                                  <<static>>
++unscheduleAllEvents()                       <<static>>
++removePendingEvent()                        <<static>>
++updateOnTime()                              <<static>>
++getImageList(): List<PImage>                <<static>>
++loadImages()                                <<static>>
++processImageLine()                          <<static>>
++getImages(): List<PImage>                   <<static>>
++setAlpha()                                  <<static>>
++shift()                                     <<static>>
++contains(): boolean                         <<static>>
++load()                                      <<static>>
++processLine(): boolean                      <<static>>
++parseBackground(): boolean                  <<static>>
++parseMiner(): boolean                       <<static>>
++parseObstacle(): boolean                    <<static>>
++parseOre(): boolean                         <<static>>
++parseSmith(): boolean                       <<static>>
++parseVein(): boolean                        <<static>>
++tryAddEntity()                              <<static>>
++withinBounds(): boolean                     <<static>>
++isOccupied(): boolean                       <<static>>
++nearestEntity(): Optional<Entity>           <<static>>
++distanceSquared(): int                      <<static>>
++findNearest(): Optional<Entity>             <<static>>
++addEntity()                                 <<static>>
++moveEntity()                                <<static>>
++removeEntity()                              <<static>>
++removeEntityAt()                            <<static>>
++getBackgroundImage(): Optional<PImage>      <<static>>
++setBackground()                             <<static>>
++getOccupant(): Optional<Entity>             <<static>>
++getOccupancyCell(): Entity                  <<static>>
++setOccupancyCell()                          <<static>>
++getBackgroundCell(): Background             <<static>>
++setBackgroundCell()                         <<static>>
++viewportToWorld(): Point                    <<static>>
++worldToViewport(): Point                    <<static>>
++clamp()                                      <<static>>
++shiftView()                                 <<static>>
++drawBackground()                            <<static>>
++drawEntities()                              <<static>>
++drawViewport()                              <<static>>
++createAnimationAction(): Action             <<static>>
++createActivityAction(): Action              <<static>>
++createBlacksmith(): Entity                  <<static>>
++createMinerFull(): Entity                   <<static>>
++createMinerNotFull(): Entity                <<static>>
++createObstacle(): Entity                    <<static>>
++createOre(): Entity                         <<static>>
++createOreBlob(): Entity                     <<static>>
++createQuake(): Entity                       <<static>>
++createVein(): Entity                        <<static>>
+
++rand: Random                                <<static>>
++BLOB_KEY: String                            <<static>>
++SMITH_ID: int                               <<static>>
++SMITH_COL: int                              <<static>>
++SMITH_ROW: int                              <<static>>
++VEIN_KEY: String                            <<static>>
++VEIN_NUM_PROPERTIES: int                    <<static>>
++VEIN_ID: int                                <<static>>
++VEIN_COL: int                               <<static>>
++VEIN_ROW: int                               <<static>>
++VEIN_ACTION_PERIOD: int                     <<static>>
++MINER_KEY: String                           <<static>>
++MINER_NUM_PROPERTIES: int                   <<static>>
++MINER_ID: int                               <<static>>
++MINER_COL: int                              <<static>>
++MINER_ROW: int                              <<static>>
++MINER_LIMIT: int                            <<static>>
++MINER_ACTION_PERIOD: int                    <<static>>
++MINER_ANIMATION_PERIOD: int                 <<static>>
++OBSTACLE_KEY: String                        <<static>>
++OBSTACLE_NUM_PROPERTIES: int                <<static>>
++OBSTACLE_ID: int                            <<static>>
++OBSTACLE_COL: int                           <<static>>
++OBSTACLE_ROW: int                           <<static>>
++ORE_KEY: String                             <<static>>
++ORE_NUM_PROPERTIES: int                     <<static>>
++ORE_ID: int                                 <<static>>
++ORE_COL: int                                <<static>>
++ORE_ROW: int                                <<static>>
++ORE_ACTION_PERIOD: int                      <<static>>
++SMITH_KEY: String                           <<static>>
++SMITH_NUM_PROPERTIES: int                   <<static>>
++BLOB_ID_SUFFIX: String                      <<static>>
++BLOB_PERIOD_SCALE: int                      <<static>>
++BLOB_ANIMATION_MIN: int                     <<static>>
++BLOB_ANIMATION_MAX: int                     <<static>>
++ORE_ID_PREFIX: String                       <<static>>
++ORE_CORRUPT_MIN: int                        <<static>>
++ORE_CORRUPT_MAX: int                        <<static>>
++ORE_REACH: int                              <<static>>
++QUAKE_KEY: String                           <<static>>
++QUAKE_ID: String                            <<static>>
++QUAKE_ACTION_PERIOD: int                    <<static>>
++QUAKE_ANIMATION_PERIOD: int                 <<static>>
++QUAKE_ANIMATION_REPEAT_COUNT: int           <<static>>
++COLOR_MASK: int                             <<static>>
++KEYED_IMAGE_MIN: int                        <<static>>
++KEYED_RED_IDX: int                        <<static>>
++KEYED_GREEN_IDX: int                        <<static>>
++KEYED_BLUE_IDX: int                        <<static>>
++PROPERTY_KEY: int                           <<static>>
++BGND_KEY: String                            <<static>>
++BGND_NUM_PROPERTIES: int                    <<static>>
++BGND_ID: int                                <<static>>
++BGND_COL: int                               <<static>>
++BGND_ROW: int                               <<static>>
