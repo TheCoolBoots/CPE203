@@ -1,0 +1,41 @@
+package project2_4_19;
+import java.util.List;
+
+import processing.core.PImage;
+
+public interface Entity
+{
+//   public EntityKind kind;
+//   public String id;
+//   public Point position;
+//   public List<PImage> images;
+//   public int imageIndex;
+//   public int resourceLimit;
+//   public int resourceCount;
+//   public int actionPeriod;
+//   public int animationPeriod;
+//
+//   public Entity(EntityKind kind, String id, Point position,
+//      List<PImage> images, int resourceLimit, int resourceCount,
+//      int actionPeriod, int animationPeriod)
+//   {
+//      this.kind = kind;
+//      this.id = id;
+//      this.position = position;
+//      this.images = images;
+//      this.imageIndex = 0;
+//      this.resourceLimit = resourceLimit;
+//      this.resourceCount = resourceCount;
+//      this.actionPeriod = actionPeriod;
+//      this.animationPeriod = animationPeriod;
+//   }
+	
+	public void executeActivity(WorldModel world,ImageStore imageStore,EventScheduler scheduler);
+	public void nextImage();
+	public int getAnimationPeriod();
+	public Point getPosition();
+	public void setPosition(Point pos);
+	public List<PImage> getImages();
+	public String getId();
+	public int getImageIndex();
+}
