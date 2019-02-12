@@ -17,6 +17,7 @@ final class ImageStore {
 	private static final int KEYED_RED_IDX = 2;
 	private static final int KEYED_GREEN_IDX = 3;
 	private static final int KEYED_BLUE_IDX = 4;
+	public static final int COLOR_MASK = 0xffffff;
 
 	public ImageStore(PImage defaultImage) {
 		this.images = new HashMap<>();
@@ -53,10 +54,23 @@ final class ImageStore {
 					int r = Integer.parseInt(attrs[KEYED_RED_IDX]);
 					int g = Integer.parseInt(attrs[KEYED_GREEN_IDX]);
 					int b = Integer.parseInt(attrs[KEYED_BLUE_IDX]);
-					Functions.setAlpha(img, screen.color(r, g, b), 0);
+					setAlpha(img, screen.color(r, g, b), 0);
 				}
 			}
 		}
+	}
+
+	public static void setAlpha(PImage img, int maskColor, int alpha) {
+		int alphaValue = alpha << 24;
+		int nonAlpha = maskColor & COLOR_MASK;
+		img.format = PApplet.ARGB;
+		img.loadPixels();
+		for (int i = 0; i < img.pixels.length; i++) {
+			if ((img.pixels[i] & COLOR_MASK) == nonAlpha) {
+				img.pixels[i] = alphaValue | nonAlpha;
+			}
+		}
+		img.updatePixels();
 	}
 
 	public List<PImage> getImages(String key) {

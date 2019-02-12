@@ -69,4 +69,10 @@ public class Obstacle implements Entity {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
+	@Override
+	public void scheduleActions(EventScheduler scheduler, WorldModel world, ImageStore imageStore) {
+		// TODO Auto-generated method stub
+		
+	}
 }

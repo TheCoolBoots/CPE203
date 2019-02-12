@@ -38,4 +38,5 @@ public interface Entity
 	public List<PImage> getImages();
 	public String getId();
 	public int getImageIndex();
+	public void scheduleActions(EventScheduler scheduler, WorldModel world, ImageStore imageStore);
 }

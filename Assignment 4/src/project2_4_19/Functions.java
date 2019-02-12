@@ -6,14 +6,12 @@ import java.util.Optional;
 import java.util.Random;
 import java.util.Scanner;
 
-import Clean.Background;
-import Clean.Entity;
 import processing.core.PImage;
 import processing.core.PApplet;
 
 final class Functions
 {
-   public static final Random rand = new Random();
+   /*public static final Random rand = new Random();
 
    public static final String BLOB_KEY = "blob";
    public static final String BLOB_ID_SUFFIX = " -- blob";
@@ -604,10 +602,8 @@ final class Functions
       return imgs;
    }
 
-   /*
      Called with color for which alpha should be set and alpha value.
      setAlpha(img, color(255, 255, 255), 0));
-   */
    public static void setAlpha(PImage img, int maskColor, int alpha)
    {
       int alphaValue = alpha << 24;
@@ -803,7 +799,7 @@ final class Functions
 //   {
 //      return pos.y >= 0 && pos.y < world.numRows &&
 //         pos.x >= 0 && pos.x < world.numCols;
-//   }*/
+//   }
 
 
 
@@ -1035,5 +1031,5 @@ final class Functions
 //   {
 //      return new Entity(EntityKind.VEIN, id, position, images, 0, 0,
 //         actionPeriod, 0);
-//   }
+//   }*/
 }

@@ -65,4 +65,10 @@ public class Blacksmith implements Entity {
 		return 0;
 	}
 
+	@Override
+	public void scheduleActions(EventScheduler scheduler, WorldModel world, ImageStore imageStore) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

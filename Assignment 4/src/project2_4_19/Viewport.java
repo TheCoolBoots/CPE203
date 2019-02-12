@@ -11,14 +11,14 @@ final class Viewport {
 		this.numCols = numCols;
 	}
 
-	public static void shift(Viewport viewport, int col, int row) {
-		viewport.col = col;
-		viewport.row = row;
+	public void shift(int col, int row) {
+		this.col = col;
+		this.row = row;
 	}
 
-	public static boolean contains(Viewport viewport, Point p) {
-		return p.y >= viewport.row && p.y < viewport.row + viewport.numRows && p.x >= viewport.col
-				&& p.x < viewport.col + viewport.numCols;
+	public boolean contains(Point p) {
+		return p.y >= row && p.y < row + numRows && p.x >= col
+				&& p.x < col + numCols;
 	}
 
 
