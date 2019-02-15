@@ -87,7 +87,8 @@ reading and writing to text files
     out.println/printf
     use "UTF-8" as second parameter for Scanner and PrintWriter
 
-    Functional Programming
+Functional Programming
+  terminal operation = operator to end functional pipeline
     Java Stream
         changes array/arraylist to be able to use functional programming
         
@@ -97,8 +98,8 @@ reading and writing to text files
         //prints out sum of all numbers
         System.out.println(IntStream.of([array]).reduce(0, (x, y) -> x+y))
 
-        Intstream.of([array]).filter() //look this up
-        intStream.of([array]).sorted 
+        Intstream.of([array]).filter(s -> s.compareToIgnoreCase("n") < 0) //look this up
+        intStream.of([array]).sorted(Comparator.comparing(Employee::getSalary()))
         IntStream.of([array]).map
         distinct
         limit
@@ -125,5 +126,19 @@ reading and writing to text files
         Consumer<T> does something to an object in a collection
         Supplier<T> create a collection in which a stream's operations are placed
         
+    predicate interface
+        results in a stream of objects that match the Predicate
+        Predicate<Employee> fourToSixThousand = e-> (e.getSalary() >= 4000 && e.getSalary() <= 6000);
+        [stream].filter(fourToSixThousand);
+        
+        
     Lambda expressions:
         (x,y) -> x+y
+        
+    using methods of other classes in lamda expression
+        .map(String::toUpperCase)
+        
+    Abstract class
+        a class that cannot be instantiated
+        
+    
