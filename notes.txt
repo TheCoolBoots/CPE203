@@ -99,7 +99,7 @@ Functional Programming
         System.out.println(IntStream.of([array]).reduce(0, (x, y) -> x+y))
 
         Intstream.of([array]).filter(s -> s.compareToIgnoreCase("n") < 0) //look this up
-        intStream.of([array]).sorted(Comparator.comparing(Employee::getSalary()))
+        intStream.of([array]).sorted(Comparator.comparing(Employee::getSalary))
         IntStream.of([array]).map
         distinct
         limit
@@ -117,7 +117,7 @@ Functional Programming
         allMatch
         
     functional interfaces:
-        Function<T, R > calls a function on type T returns type R
+        Function<T, R > calls a function on type T returns type R 
             Function<int, int> myFunction = (int x, int y)->{return x+y;}
                                                 ^anonymous function
             myFunction.apply
@@ -141,4 +141,51 @@ Functional Programming
     Abstract class
         a class that cannot be instantiated
         
+    the 8-puzzle
+        one free space in 3 by 3 grid
+        move free space to get into order with free space on top left
+        path cost = number of moves it takes to get to final order
+       
+
+    Graph Searches:
+        Dijkstra search function
+            assign cost to each path in a graph
+        heuristic search function
+            calculate cost of each path as you go
+        combined = A* search function
+        
+Obstacle:
+    unused = executeActivity, nextImage, getAnimationPeriod, scheduleActions
+Ore
+    unused = nextImage, getAnimationPeriod
+Vein:
+    unused = nextImage, getAnimationPeriod
+Blacksmith: 
+    unused = executeActivity, nextImage, getAnimationPeriod, scheduleActions
     
+Bring It On MOVIE
+
+ExecutableEntity = executeActivity, scheduleActions
+FullEntity =  executeActivity, nextImage, getAnimationPeriod, scheduleActions
+AnimatableEntity = nextImage, getAnimationPeriod
+
+
+Design Patterns
+    Elegant solutions to common problems
+    conceptual design -- not implemented into specific language
+    
+    Categories
+        Creationary
+        Structural
+        Behaviroal
+        
+        Observer pattern (Behaviroal):
+                        notify()   ->   StackObserver
+            subject     notify()   ->   EmailObserver
+                        notify()   ->   ScreenObserver
+        
+        Visitor pattern (Behaviroal):
+            problem = define a new operation for classes without changing said classes
+            solution = create visitor object that implements operation
+                client class calls dispatching operation accept(visitor) -- visitor then executes operation
+            
