@@ -1,31 +1,15 @@
 public class Point
 {
-   public final int x;
-   public final int y;
+   public final double x;
+   public final double y;
+   public final double z;
 
-   public Point(int x, int y)
+   public Point(double x, double y, double z)
    {
       this.x = x;
       this.y = y;
+      this.z = z;
    }
    
-   public String toString() {
-	   return "("+x+", "+y+")";
-   }
    
-   public Point getLeft() {
-	   return new Point(x-1,y);
-   }
-   
-   public Point getRight() {
-	   return new Point(x+1,y);
-   }
-   
-   public Point getTop() {
-	   return new Point(x,y-1);
-   }
-   
-   public Point getBot() {
-	   return new Point(x,y+1);
-   }
 }

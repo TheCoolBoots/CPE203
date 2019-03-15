@@ -1,10 +1,12 @@
 package base;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import processing.core.PImage;
 
 import java.util.Optional;
+import java.util.stream.Stream;
 
 
 public class MinerFull implements AnimatableEntity, ExecutableEntity{
@@ -47,7 +49,7 @@ public class MinerFull implements AnimatableEntity, ExecutableEntity{
 	public Optional<Entity> findNearest(WorldModel world, Point pos, Entity e) {
 		List<Entity> ofType = new LinkedList<>();
 		for (Entity entity : world.getEntities()) {
-			if (entity instanceof Blacksmith) {
+			if (entity.accept(new CheckIfBlacksmith())) {
 				ofType.add(entity);
 			}
 		}
@@ -97,19 +99,14 @@ public class MinerFull implements AnimatableEntity, ExecutableEntity{
 
 	// 13
 	public Point nextPosition(WorldModel world, Point destPos) {
-		int horiz = Integer.signum(destPos.getX() - this.position.getX());
-		Point newPos = new Point(this.position.getX() + horiz, this.position.getY());
+		SingleStepPathingStrategy nextStep = new SingleStepPathingStrategy();
+				
+		List<Point> newPos = nextStep.computePath(position, destPos, p -> !world.isOccupied(p)
+				, (p,q)->true, new GetNeighbors());
 
-		if (horiz == 0 || world.isOccupied(newPos)) {
-			int vert = Integer.signum(destPos.getY() - this.position.getY());
-			newPos = new Point(this.position.getX(), this.position.getY() + vert);
-
-			if (vert == 0 || world.isOccupied(newPos)) {
-				newPos = this.position;
-			}
-		}
-
-		return newPos;
+		if(newPos.size()>0)
+			return newPos.get(0);
+		return position;
 	}
 
 	// 9
@@ -149,5 +146,9 @@ public class MinerFull implements AnimatableEntity, ExecutableEntity{
 
 	public int getImageIndex() {
 		return imageIndex;
+	}
+	
+	public <R> R accept(EntityVisitor<R> visitor) {
+		return visitor.visit(this);
 	}
 }

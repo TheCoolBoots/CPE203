@@ -1,0 +1,4 @@
+1. The event is triggered on mouseclick
+2. Blots of lightning rain down from the sky, striking and turning the grass on fire. Any entities zapped turn into deadly koopas.
+3. The deadly koopas seek to destroy the remaining living things of the world
+4. Koopas move towards miners, and when they reach them, they jump on their heads and cause them to explode

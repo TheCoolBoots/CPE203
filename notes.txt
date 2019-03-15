@@ -188,4 +188,23 @@ Design Patterns
             problem = define a new operation for classes without changing said classes
             solution = create visitor object that implements operation
                 client class calls dispatching operation accept(visitor) -- visitor then executes operation
-            
+                
+Exceptions
+    checked exception
+        (throw catch)
+    unchecked exception
+        (no throw catch)
+     
+BAD PRACTICES     
+    low cohesion
+        little relation between methods in a class
+        split up class into more classes
+    high coupling
+        each class is highly dependent on other classes
+        decrease number of connections
+        
+Final class
+    cannot be inhereted from
+final method/variable
+    cannot be mutated
+        
